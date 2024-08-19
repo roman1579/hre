@@ -219,13 +219,17 @@ func main() {
 					fmt.Println(arabToRome[num1+num2])
 				} else if operand == "-" {
 					res := num1 - num2
-					if res < 0 {
-						panic("не существует отрицательных римских чисел")
+					if res < 1 {
+						panic("не существует отрицательных римских чисел и числа 0")
 					} else {
 						fmt.Println(arabToRome[res])
 					}
 				} else if operand == "/" {
-					fmt.Println(arabToRome[num1/num2])
+					rsr := num1/num2
+					if rsr < 1{
+						panic("не существует римских отрицательных чисел и числа 0")
+					}
+					fmt.Println(arabToRome[rsr])
 				} else if operand == "*" {
 					fmt.Println(arabToRome[num1*num2])
 				} else {
